@@ -16,7 +16,7 @@ getPairsCount(arr, k) {
                     map[sum]-=1;
 
                 }
-                else if((k - sum) > sum &&  map[k - sum] >= 1){
+                else if((k - sum) > sum){
                     count+=map[k - sum];
                     map[sum] -=1;
                 }
