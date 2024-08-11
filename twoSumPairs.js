@@ -7,17 +7,17 @@ getPairsCount(arr, k) {
             else map[ele]=1;
         })
 
-        let sum=0, count=0;
+        let currVal=0, count=0;
         for(let i=0; i<arr.length; i++){
-            sum=arr[i];
-            if(map[k - sum]>0){
-                if((k - sum) === sum && map[k - sum] >= 2){
-                    count=count+map[k - sum]-1;
-                    map[sum]-=1;
+            currVal=arr[i];
+            if(map[k - currVal]>0){
+                if((k - currVal) === currVal && map[k - currVal] >= 2){
+                    count=count+map[k - currVal]-1;
+                    map[currVal]-=1;
                 }
-                else if((k - sum) > sum){
-                    count+=map[k - sum];
-                    map[sum] -=1;
+                else if((k - currVal) > currVal){
+                    count+=map[k - currVal];
+                    map[currVal] -=1;
                 }   
             }
         }
