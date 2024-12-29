@@ -1,6 +1,4 @@
-getPairsCount(arr, k) {
-        // code here
-        
+twoSumPairsCount(arr, k) {        
         let map={};
         arr.forEach(ele=>{
             if(map[ele]) map[ele]++;
