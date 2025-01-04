@@ -1,13 +1,14 @@
-var twoSumIndices = function(nums, target) {
-    let map={};
-
+function twoSumIndices(nums, target) {
+    let map = new Map(), start=0, end=0;
     for(let i=0; i<nums.length; i++){
-        let comp = target-nums[i];
-        if(map[comp] !== undefined){
-            return [map[comp], i];
+        const ele = nums[i];
+        if(map.has(target-ele)){
+            // 2 sum found
+            start = map.get(target-ele);
+            end = i;
+            break;
         }
-        else{
-            map[nums[i]]=i;
-        }
+        else map.set(ele, i)
     }
+    return [start, end];
 };
