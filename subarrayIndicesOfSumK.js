@@ -1,22 +1,23 @@
 // Function to find a continuous sub-array which adds up to a given number.
-    subarraySum(arr, n, s) {
+    subarraySum(arr, n, target) {
         // your code here
         // 1 2 3 7 6 => 12
         // return [2, 4]
         let sum=0, i=0, j=0, found=false, map={};
         for(i=0; i<n; i++){
             sum+=arr[i];
-            if(sum === s){
+            if(sum === target){
                 found=true;
                 break;
             }
-            if(map[sum-s] !== undefined){
-                found=true;
-                j=map[sum-s]+1
-                break;
+            else if(sum > target){
+                if(map[sum-target] !== undefined){
+                    j=map[sum-target]+1;
+                    found = true;
+                    break;
+                }
             }
-            map[sum] = i;
+            map[sum]=i;
         }
-        if(found) return [j+1, i+1];
-        return [-1];
+        return found ? [j+1, i+1]: [-1];
     }
