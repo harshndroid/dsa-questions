@@ -1,4 +1,4 @@
-function maxSubArray(nums) {
+function maxSumSubArrayValue(nums) {
     let currSum = 0;
     let maxSum = nums[0];
     for(let i = 0; i < nums.length; i++){
